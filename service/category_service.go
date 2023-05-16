@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"golangeko/web"
+	"golangeko/model/web"
 )
 
 type CategoryService interface {
