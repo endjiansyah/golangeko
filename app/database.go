@@ -4,10 +4,12 @@ import (
 	"database/sql"
 	"golangeko/helper"
 	"time"
+
+	_ "github.com/lib/pq"
 )
 
 func NewDB() *sql.DB {
-	db, err := sql.Open("pgsql", "postgres:postgres@tcp(localhost:5432)/golang_eko")
+	db, err := sql.Open("postgres", "postgres://postgres:postgres@localhost:5432/golang_eko?sslmode=disable")
 
 	helper.PanicIfError(err)
 
