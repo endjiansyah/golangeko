@@ -2,6 +2,7 @@ package app
 
 import (
 	"database/sql"
+	"fmt"
 	"golangeko/helper"
 	"time"
 
@@ -13,6 +14,7 @@ func NewDB() *sql.DB {
 
 	helper.PanicIfError(err)
 
+	fmt.Println("Koneksi ke database berhasil")
 	db.SetMaxIdleConns(5)
 	db.SetMaxOpenConns(20)
 	db.SetConnMaxIdleTime(10 * time.Minute)
